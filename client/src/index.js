@@ -1,3 +1,5 @@
+import './scss/app.css';
+
 import React from 'react';
 import { createStore, applyMiddleware } from 'redux';
 import { render } from 'react-dom';

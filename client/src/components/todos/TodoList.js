@@ -13,7 +13,7 @@ class TodoForm extends Component {
     renderList() {
         return _.chain(this.props.todos)
             .filter(todo => {
-                return todo.isCompleted == this.props.showCompleted;
+                return todo.isCompleted === this.props.showCompleted;
             })
             .map(todo => {
                 return (

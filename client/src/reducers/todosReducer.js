@@ -10,7 +10,7 @@ const todosReducer = (state = [], actions) => {
         case ADD_TODO:
             return [actions.payload, ...state];
         case DELETE_TODO:
-            return state.filter(item => actions.payload._id != item._id);
+            return state.filter(item => actions.payload._id !== item._id);
         case FETCH_TODOS:
             return actions.payload || [];
         case UPDATE_TODO:
