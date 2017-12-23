@@ -21,11 +21,8 @@ class TodoForm extends Component {
                         <TodoItem
                             todo={todo.todo}
                             status={todo.status}
-                            onStatusChange={evt => {
-                                evt.preventDefault();
-                                this.props.updateTodo(todo._id, {
-                                    status: evt.currentTarget.value
-                                });
+                            updateTodo={data => {
+                                this.props.updateTodo(todo._id, data);
                             }}
                             onDelete={evt => {
                                 evt.preventDefault();
