@@ -5,7 +5,7 @@ const { Schema } = mongoose;
 const todoSchema = new Schema({
     todo: String,
     userId: String,
-    isCompleted: { type: Boolean, default: false }
+    status: { type: String, default: 'do-it' }
 });
 
 mongoose.model('todos', todoSchema);

@@ -13,18 +13,18 @@ class TodoForm extends Component {
     renderList() {
         return _.chain(this.props.todos)
             .filter(todo => {
-                return todo.isCompleted === this.props.showCompleted;
+                return todo.status === this.props.filterByStatus;
             })
             .map(todo => {
                 return (
                     <li key={todo._id}>
                         <TodoItem
                             todo={todo.todo}
-                            isCompleted={todo.isCompleted}
-                            onToggleCompleted={evt => {
+                            status={todo.status}
+                            onStatusChange={evt => {
                                 evt.preventDefault();
                                 this.props.updateTodo(todo._id, {
-                                    isCompleted: !todo.isCompleted
+                                    status: evt.currentTarget.value
                                 });
                             }}
                             onDelete={evt => {

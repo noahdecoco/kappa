@@ -5,9 +5,15 @@ class TodoItem extends Component {
         return (
             <form>
                 <input type="text" defaultValue={this.props.todo} />
-                <button onClick={this.props.onToggleCompleted}>
-                    {this.props.isCompleted ? 'Undo' : 'Done'}
-                </button>
+                <select
+                    onChange={this.props.onStatusChange}
+                    value={this.props.status}
+                >
+                    <option value="do-it">Do it</option>
+                    <option value="doing">Doing</option>
+                    <option value="ding-dong">Ding Dong</option>
+                    <option value="done">Done</option>
+                </select>
                 <button type="submit" onClick={this.props.onDelete}>
                     Delete
                 </button>

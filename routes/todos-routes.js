@@ -37,9 +37,7 @@ module.exports = app => {
                 userId: req.user._id
             },
             {
-                $set: {
-                    isCompleted: req.body.isCompleted
-                }
+                $set: req.body
             },
             { new: true }
         );
