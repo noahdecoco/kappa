@@ -5,12 +5,12 @@ import * as actions from '../../actions';
 
 class TodoForm extends Component {
     render() {
-        const { submitTodo } = this.props;
+        const { submitTodo, handleSubmit } = this.props;
 
         return (
             <div>
                 <form
-                    onSubmit={this.props.handleSubmit(values => {
+                    onSubmit={handleSubmit(values => {
                         submitTodo(values);
                         this.props.reset();
                     })}
@@ -43,11 +43,9 @@ const validate = values => {
     return errors;
 };
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state, { status }) {
     return {
-        initialValues: {
-            status: ownProps.status
-        }
+        initialValues: { status }
     };
 }
 
