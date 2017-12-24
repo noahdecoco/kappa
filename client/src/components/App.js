@@ -7,7 +7,7 @@ import * as actions from '../actions';
 import Login from './Login';
 import Header from './Header';
 
-import TodoDashboard from './todos/TodoDashboard';
+import TasksDashboard from './tasks/TasksDashboard';
 
 class App extends Component {
     componentWillMount() {
@@ -25,7 +25,7 @@ class App extends Component {
             <div>
                 <Header />
 
-                <TodoDashboard />
+                <TasksDashboard />
             </div>
         );
     }

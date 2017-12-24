@@ -2,10 +2,10 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import TodoItem from './TodoItem';
+import TaskItem from './TaskItem';
 import * as actions from '../../actions';
 
-class TodoList extends Component {
+class TaskList extends Component {
     componentDidMount() {
         this.props.fetchTodos();
     }
@@ -18,7 +18,7 @@ class TodoList extends Component {
             .map(todo => {
                 return (
                     <li key={todo._id}>
-                        <TodoItem
+                        <TaskItem
                             todo={todo.todo}
                             status={todo.status}
                             updateTodo={data => {
@@ -48,4 +48,4 @@ const mapStateToProps = ({ todos }) => {
     return { todos };
 };
 
-export default connect(mapStateToProps, actions)(TodoList);
+export default connect(mapStateToProps, actions)(TaskList);

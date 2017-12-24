@@ -1,11 +1,11 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 
-import todoStatuses from './todoStatuses';
+import taskTypes from './taskTypes';
 
-class TodoItem extends Component {
+class TaskItem extends Component {
     renderStatuses() {
-        return _.map(todoStatuses, status => {
+        return _.map(taskTypes, status => {
             return (
                 <option key={status.id} value={status.id}>
                     {status.label}
@@ -48,4 +48,4 @@ class TodoItem extends Component {
     }
 }
 
-export default TodoItem;
+export default TaskItem;

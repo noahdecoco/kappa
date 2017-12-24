@@ -23,7 +23,7 @@ class TodoForm extends Component {
                     />
 
                     <Field
-                        name="status"
+                        name="type"
                         component="input"
                         type="text"
                         type="hidden"
@@ -43,14 +43,12 @@ const validate = values => {
     return errors;
 };
 
-function mapStateToProps(state, { status }) {
+const mapStateToProps = (state, { type }) => {
     return {
-        initialValues: { status }
+        initialValues: { type }
     };
-}
+};
 
 export default connect(mapStateToProps, actions)(
-    reduxForm({
-        validate
-    })(TodoForm)
+    reduxForm({ validate })(TodoForm)
 );
