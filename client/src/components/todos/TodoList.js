@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import TodoItem from './TodoItem';
 import * as actions from '../../actions';
 
-class TodoForm extends Component {
+class TodoList extends Component {
     componentDidMount() {
         this.props.fetchTodos();
     }
@@ -48,4 +48,4 @@ const mapStateToProps = ({ todos }) => {
     return { todos };
 };
 
-export default connect(mapStateToProps, actions)(TodoForm);
+export default connect(mapStateToProps, actions)(TodoList);

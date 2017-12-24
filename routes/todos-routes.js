@@ -15,6 +15,7 @@ module.exports = app => {
     app.post('/api/todos', requireLogin, async (req, res) => {
         const todo = await new Todo({
             todo: req.body.todo,
+            status: req.body.status,
             userId: req.user._id
         }).save();
 

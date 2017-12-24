@@ -6,7 +6,6 @@ import * as actions from '../actions';
 
 import Login from './Login';
 import Header from './Header';
-import TodoForm from './todos/TodoForm';
 
 import TodoDashboard from './todos/TodoDashboard';
 
@@ -25,7 +24,7 @@ class App extends Component {
         return (
             <div>
                 <Header />
-                <TodoForm />
+
                 <TodoDashboard />
             </div>
         );

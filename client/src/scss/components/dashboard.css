@@ -1,0 +1,9 @@
+.dashboard {
+  display: flex; }
+
+.dashboard__column {
+  flex: 1; }
+
+.dashboard__column-title {
+  margin: 1rem;
+  text-align: center; }

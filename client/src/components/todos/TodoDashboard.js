@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 
+import TodoForm from './TodoForm';
 import TodoList from './TodoList';
 
 import todoStatuses from './todoStatuses';
@@ -9,8 +10,9 @@ class TodoDashboard extends Component {
     renderContent() {
         return _.map(todoStatuses, status => {
             return (
-                <div key={status.id}>
-                    <p>{status.label}</p>
+                <div className="dashboard__column" key={status.id}>
+                    <p className="dashboard__column-title">{status.label}</p>
+                    <TodoForm status={status.id} form={status.id} />
                     <TodoList filterByStatus={status.id} />
                 </div>
             );
@@ -18,7 +20,7 @@ class TodoDashboard extends Component {
     }
 
     render() {
-        return <div>{this.renderContent()}</div>;
+        return <div className="dashboard">{this.renderContent()}</div>;
     }
 }
 

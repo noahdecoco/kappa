@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { reset, Field, reduxForm } from 'redux-form';
+import { Field, reduxForm } from 'redux-form';
 import * as actions from '../../actions';
 
 class TodoForm extends Component {
@@ -9,19 +9,26 @@ class TodoForm extends Component {
 
         return (
             <div>
-                <p>Make a new Todo</p>
                 <form
                     onSubmit={this.props.handleSubmit(values => {
                         submitTodo(values);
+                        this.props.reset();
                     })}
                 >
                     <Field
                         name="todo"
                         component="input"
                         type="text"
-                        placeholder="Todo"
+                        placeholder="Description"
                     />
-                    <button type="submit">ADD</button>
+
+                    <Field
+                        name="status"
+                        component="input"
+                        type="text"
+                        type="hidden"
+                    />
+                    <button type="submit">+</button>
                 </form>
             </div>
         );
@@ -36,14 +43,16 @@ const validate = values => {
     return errors;
 };
 
-const onSubmitSuccess = (result, dispatch) => {
-    dispatch(reset('TodoForm'));
-};
+function mapStateToProps(state, ownProps) {
+    return {
+        initialValues: {
+            status: ownProps.status
+        }
+    };
+}
 
-export default connect(null, actions)(
+export default connect(mapStateToProps, actions)(
     reduxForm({
-        validate,
-        onSubmitSuccess,
-        form: 'TodoForm'
+        validate
     })(TodoForm)
 );
