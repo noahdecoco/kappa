@@ -3,31 +3,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import TaskItem from './TaskItem';
-import * as actions from '../../actions';
 
 class TaskList extends Component {
-    componentDidMount() {
-        this.props.fetchTodos();
-    }
-
     renderList() {
-        return _.chain(this.props.todos)
-            .filter(todo => {
-                return todo.status === this.props.filterByStatus;
+        return _.chain(this.props.tasks)
+            .filter(task => {
+                return task.type === this.props.filterByType;
             })
-            .map(todo => {
+            .map(task => {
                 return (
-                    <li key={todo._id}>
+                    <li key={task._id}>
                         <TaskItem
-                            todo={todo.todo}
-                            status={todo.status}
-                            updateTodo={data => {
-                                this.props.updateTodo(todo._id, data);
-                            }}
-                            onDelete={evt => {
-                                evt.preventDefault();
-                                this.props.deleteTodo(todo._id);
-                            }}
+                            description={task.description}
+                            type={task.type}
+                            id={task._id}
                         />
                     </li>
                 );
@@ -44,8 +33,8 @@ class TaskList extends Component {
     }
 }
 
-const mapStateToProps = ({ todos }) => {
-    return { todos };
+const mapStateToProps = ({ tasks }) => {
+    return { tasks };
 };
 
-export default connect(mapStateToProps, actions)(TaskList);
+export default connect(mapStateToProps, null)(TaskList);

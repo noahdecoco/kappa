@@ -1,14 +1,17 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import taskTypes from './taskTypes';
 
+import * as actions from '../../actions';
+
 class TaskItem extends Component {
     renderStatuses() {
-        return _.map(taskTypes, status => {
+        return _.map(taskTypes, type => {
             return (
-                <option key={status.id} value={status.id}>
-                    {status.label}
+                <option key={type.id} value={type.id}>
+                    {type.label}
                 </option>
             );
         });
@@ -19,12 +22,14 @@ class TaskItem extends Component {
             <form>
                 <input
                     type="text"
-                    defaultValue={this.props.todo}
+                    defaultValue={this.props.description}
                     onBlur={evt => {
                         evt.preventDefault();
-                        if (this.props.todo !== evt.currentTarget.value) {
-                            this.props.updateTodo({
-                                todo: evt.currentTarget.value
+                        if (
+                            this.props.description !== evt.currentTarget.value
+                        ) {
+                            this.props.updateTask(this.props.id, {
+                                description: evt.currentTarget.value
                             });
                         }
                     }}
@@ -32,15 +37,20 @@ class TaskItem extends Component {
                 <select
                     onChange={evt => {
                         evt.preventDefault();
-                        this.props.updateTodo({
-                            status: evt.currentTarget.value
+                        this.props.updateTask(this.props.id, {
+                            type: evt.currentTarget.value
                         });
                     }}
-                    value={this.props.status}
+                    value={this.props.type}
                 >
                     {this.renderStatuses()}
                 </select>
-                <button type="submit" onClick={this.props.onDelete}>
+                <button
+                    onClick={evt => {
+                        evt.preventDefault();
+                        this.props.deleteTask(this.props.id);
+                    }}
+                >
                     Delete
                 </button>
             </form>
@@ -48,4 +58,4 @@ class TaskItem extends Component {
     }
 }
 
-export default TaskItem;
+export default connect(null, actions)(TaskItem);
