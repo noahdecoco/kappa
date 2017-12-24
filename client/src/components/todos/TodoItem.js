@@ -7,8 +7,8 @@ class TodoItem extends Component {
     renderStatuses() {
         return _.map(todoStatuses, status => {
             return (
-                <option key={status.id} value={status.value}>
-                    {status.id}
+                <option key={status.id} value={status.id}>
+                    {status.label}
                 </option>
             );
         });
@@ -49,4 +49,3 @@ class TodoItem extends Component {
 }
 
 export default TodoItem;
-
