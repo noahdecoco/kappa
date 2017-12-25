@@ -2,7 +2,22 @@
     padding: 0.5rem;
 
     border-radius: 0.4rem;
-    background: $colour-green;
+
+    &--do-it {
+        background: $colour-background-do-it;
+    }
+
+    &--doing {
+        background: $colour-background-doing;
+    }
+
+    &--ding-dong {
+        background: $colour-background-ding-dong;
+    }
+
+    &--done {
+        background: $colour-background-done;
+    }
 }
 
 .task-item__form {
@@ -16,9 +31,14 @@
 
     color: $colour-dark-grey;
     border: 0;
+    border-bottom: 1px solid transparent;
     background: none;
 
     font-size: 1rem;
+    &:focus {
+        border-bottom: 1px solid $colour-dark-grey;
+        outline: none;
+    }
 }
 
 .task-item__controls {

@@ -19,7 +19,7 @@ class TaskItem extends Component {
 
     render() {
         return (
-            <div className="task-item">
+            <div className={`task-item task-item--${this.props.type}`}>
                 <form className="task-item__form">
                     <input
                         className="task-item__description"

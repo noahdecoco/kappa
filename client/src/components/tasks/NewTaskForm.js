@@ -9,24 +9,26 @@ class NewTaskForm extends Component {
         const { createTask, handleSubmit } = this.props;
 
         return (
-            <div>
-                <form
-                    onSubmit={handleSubmit(values => {
-                        createTask(values);
-                        this.props.reset();
-                    })}
-                >
-                    <Field
-                        name="description"
-                        component="input"
-                        type="text"
-                        placeholder="Description"
-                    />
+            <form
+                className="form-new-task"
+                onSubmit={handleSubmit(values => {
+                    createTask(values);
+                    this.props.reset();
+                })}
+            >
+                <Field
+                    className="form-new-task__input-description"
+                    name="description"
+                    component="input"
+                    type="text"
+                    placeholder="Description"
+                />
 
-                    <Field name="type" component="input" type="hidden" />
-                    <button type="submit">+</button>
-                </form>
-            </div>
+                <Field name="type" component="input" type="hidden" />
+                <button className="form-new-task__button-submit" type="submit">
+                    +
+                </button>
+            </form>
         );
     }
 }
