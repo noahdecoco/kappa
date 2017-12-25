@@ -1,0 +1,20 @@
+.task-item {
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  background: #000; }
+
+.task-item__form {
+  display: block; }
+
+.task-item__description {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  border: 0;
+  background: none;
+  font-size: 1rem; }
+
+.task-item__controls {
+  display: flex;
+  justify-content: space-between; }

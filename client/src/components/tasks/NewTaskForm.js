@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
+
 import * as actions from '../../actions';
 
 class NewTaskForm extends Component {

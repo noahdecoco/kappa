@@ -19,41 +19,49 @@ class TaskItem extends Component {
 
     render() {
         return (
-            <form>
-                <input
-                    type="text"
-                    defaultValue={this.props.description}
-                    onBlur={evt => {
-                        evt.preventDefault();
-                        if (
-                            this.props.description !== evt.currentTarget.value
-                        ) {
-                            this.props.updateTask(this.props.id, {
-                                description: evt.currentTarget.value
-                            });
-                        }
-                    }}
-                />
-                <select
-                    onChange={evt => {
-                        evt.preventDefault();
-                        this.props.updateTask(this.props.id, {
-                            type: evt.currentTarget.value
-                        });
-                    }}
-                    value={this.props.type}
-                >
-                    {this.renderStatuses()}
-                </select>
-                <button
-                    onClick={evt => {
-                        evt.preventDefault();
-                        this.props.deleteTask(this.props.id);
-                    }}
-                >
-                    Delete
-                </button>
-            </form>
+            <div className="task-item">
+                <form className="task-item__form">
+                    <input
+                        className="task-item__description"
+                        type="text"
+                        defaultValue={this.props.description}
+                        onBlur={evt => {
+                            evt.preventDefault();
+                            if (
+                                this.props.description !==
+                                evt.currentTarget.value
+                            ) {
+                                this.props.updateTask(this.props.id, {
+                                    description: evt.currentTarget.value
+                                });
+                            }
+                        }}
+                    />
+                    <div className="task-item__controls">
+                        <select
+                            className="task-item__select-status"
+                            onChange={evt => {
+                                evt.preventDefault();
+                                this.props.updateTask(this.props.id, {
+                                    type: evt.currentTarget.value
+                                });
+                            }}
+                            value={this.props.type}
+                        >
+                            {this.renderStatuses()}
+                        </select>
+                        <button
+                            className="task-item__button-delete"
+                            onClick={evt => {
+                                evt.preventDefault();
+                                this.props.deleteTask(this.props.id);
+                            }}
+                        >
+                            Delete
+                        </button>
+                    </div>
+                </form>
+            </div>
         );
     }
 }

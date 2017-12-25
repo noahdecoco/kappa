@@ -12,7 +12,7 @@ class TaskList extends Component {
             })
             .map(task => {
                 return (
-                    <li key={task._id}>
+                    <li key={task._id} className="task-list__item">
                         <TaskItem
                             description={task.description}
                             type={task.type}
@@ -25,11 +25,7 @@ class TaskList extends Component {
     }
 
     render() {
-        return (
-            <div>
-                <ul>{this.renderList()}</ul>
-            </div>
-        );
+        return <ul className="task-list">{this.renderList()}</ul>;
     }
 }
 

@@ -20,8 +20,40 @@ html {
   display: flex; }
 
 .dashboard__column {
-  flex: 1; }
+  flex: 1;
+  padding: 0.5rem; }
 
 .dashboard__column-title {
   margin: 1rem;
   text-align: center; }
+
+.task-list {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.task-list__item {
+  margin: 0.5rem 0;
+  padding: 0;
+  list-style: none; }
+
+.task-item {
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  background: #000; }
+
+.task-item__form {
+  display: block; }
+
+.task-item__description {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  border: 0;
+  background: none;
+  font-size: 1rem; }
+
+.task-item__controls {
+  display: flex;
+  justify-content: space-between; }
