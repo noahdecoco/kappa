@@ -4,12 +4,12 @@ export default [
         label: 'Do it'
     },
     {
-        id: 'doing',
-        label: 'Doing'
-    },
-    {
         id: 'ding-dong',
         label: 'Ding dong'
+    },
+    {
+        id: 'doing',
+        label: 'Doing'
     },
     {
         id: 'done',

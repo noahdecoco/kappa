@@ -1,15 +1,48 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
+html,
+body {
+  font-family: 'Roboto'; }
+
 body,
 html {
   overflow: hidden;
   width: 100vw;
   height: 100vh;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  background-color: #333; }
 
-html,
-body {
-  font-family: 'Roboto'; }
+.login-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh; }
+
+.login-view__dialog {
+  text-align: center; }
+
+.login-view__logo {
+  color: #fff;
+  font-size: 3rem; }
+
+.login-view__button-google {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #333;
+  border-radius: 0.5rem;
+  background: #a1e1c0; }
+
+.login-view__button-facebook {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #333;
+  border-radius: 0.5rem;
+  background: #6ac5cd; }
 
 .header {
   display: flex;
@@ -105,8 +138,7 @@ body {
   display: flex;
   justify-content: space-between;
   height: calc(100vh - 50px);
-  padding: 0.5rem;
-  background-color: #333; }
+  padding: 0.5rem; }
 
 .dashboard__column {
   flex: 1;

@@ -25,6 +25,12 @@ class TaskItem extends Component {
                         className="task-item__description"
                         type="text"
                         defaultValue={this.props.description}
+                        onKeyDown={evt => {
+                            if (evt.keyCode === 13 || evt.keyCode === 27) {
+                                evt.preventDefault();
+                                evt.currentTarget.blur();
+                            }
+                        }}
                         onBlur={evt => {
                             evt.preventDefault();
                             if (

@@ -1,7 +1,8 @@
-@import './globals/layout.scss';
 @import './globals/colours.scss';
 @import './globals/typography.scss';
+@import './globals/layout.scss';
 
+@import './components/login-view.scss';
 @import './components/header.scss';
 @import './components/task-list.scss';
 @import './components/task-item.scss';
