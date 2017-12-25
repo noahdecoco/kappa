@@ -11,7 +11,7 @@ class Landing extends Component {
                     Hello, {this.props.auth.displayName}
                 </p>
                 <a className="header__button-logout" href="/api/logout">
-                    Logout
+                    &lt;
                 </a>
             </header>
         );

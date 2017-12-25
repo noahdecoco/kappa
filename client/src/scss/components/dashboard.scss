@@ -1,14 +1,20 @@
 .dashboard {
     display: flex;
+
+    height: calc(100vh - 50px);
+    padding: 0.5rem;
+
+    background-color: $colour-dark-grey;
 }
 
 .dashboard__column {
     flex: 1;
+
     padding: 0.5rem;
 }
 
 .dashboard__column-title {
-    margin: 1rem;
+    margin: 1rem 0;
 
-    text-align: center;
+    color: $colour-white;
 }

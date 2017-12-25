@@ -24,7 +24,6 @@ class App extends Component {
         return (
             <div>
                 <Header />
-
                 <TasksDashboard />
             </div>
         );

@@ -17,7 +17,12 @@ class TasksDashboard extends Component {
     renderContent() {
         return _.map(taskTypes, type => {
             return (
-                <div className="dashboard__column" key={type.id}>
+                <div
+                    className={`dashboard__column dashboard__column--${
+                        type.id
+                    }`}
+                    key={type.id}
+                >
                     <p className="dashboard__column-title">{type.label}</p>
                     <NewTaskForm type={type.id} form={type.id} />
                     <TaskList filterByType={type.id} />
