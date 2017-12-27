@@ -1,4 +1,6 @@
 .task-item {
+    position: relative;
+
     padding: 0.5rem;
 
     border-radius: 0.4rem;
@@ -9,21 +11,66 @@
     display: block;
 }
 
-.task-item__description {
+.task-item__input-description {
+    display: block;
+    overflow: hidden;
+
     box-sizing: border-box;
     width: 100%;
     margin-bottom: 0.5rem;
+    padding: 0;
 
-    color: $colour-dark-grey;
+    resize: none;
+
     border: 0;
-    border-bottom: 1px solid transparent;
+    outline: 0;
     background: none;
 
-    font-size: 1rem;
+    font-family: 'Roboto';
+    font-size: 16px;
+
     &:focus {
         border-bottom: 1px solid $colour-dark-grey;
         outline: none;
     }
+}
+
+.task-item__ghost-input {
+    position: absolute;
+    top: 0;
+    right: 0.5rem;
+    left: 0.5rem;
+
+    display: block;
+    // color: red;
+    visibility: hidden;
+
+    box-sizing: border-box;
+
+    white-space: pre-wrap;
+    word-wrap: break-word;
+
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.task-item__description {
+    // box-sizing: border-box;
+    // width: 100%;
+    // margin-bottom: 0.5rem;
+    //
+    // resize: none;
+    //
+    // color: $colour-dark-grey;
+    // border: 0;
+    // border-bottom: 1px solid transparent;
+    // background: none;
+    //
+    // font-size: 1rem;
+
+    // &:focus {
+    //     border-bottom: 1px solid $colour-dark-grey;
+    //     outline: none;
+    // }
 }
 
 .task-item__controls {

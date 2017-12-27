@@ -7,6 +7,14 @@ import taskTypes from './taskTypes';
 import * as actions from '../../actions';
 
 class TaskItem extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            height: 20,
+            description: this.props.description
+        };
+    }
+
     renderStatuses() {
         return _.map(taskTypes, type => {
             return (
@@ -17,19 +25,31 @@ class TaskItem extends Component {
         });
     }
 
+    setValue() {
+        console.log(this.state);
+    }
+
     render() {
         return (
             <div className={`task-item task-item--${this.props.type}`}>
                 <form className="task-item__form">
-                    <input
-                        className="task-item__description"
-                        type="text"
-                        defaultValue={this.props.description}
+                    <textarea
+                        defaultValue={this.state.description}
+                        className="task-item__input-description"
+                        onChange={evt => {
+                            this.setState({
+                                description: evt.currentTarget.value
+                            });
+                        }}
                         onKeyDown={evt => {
                             if (evt.keyCode === 13 || evt.keyCode === 27) {
                                 evt.preventDefault();
                                 evt.currentTarget.blur();
                             }
+                        }}
+                        onKeyUp={evt => {
+                            evt.currentTarget.style.height =
+                                this.refs.ghostInput.clientHeight + 'px';
                         }}
                         onBlur={evt => {
                             evt.preventDefault();
@@ -43,6 +63,9 @@ class TaskItem extends Component {
                             }
                         }}
                     />
+                    <div ref="ghostInput" className="task-item__ghost-input">
+                        {this.state.description}
+                    </div>
                     <div className="task-item__controls">
                         <select
                             className="task-item__select-status"

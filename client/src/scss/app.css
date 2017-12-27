@@ -80,6 +80,7 @@ html {
   list-style: none; }
 
 .task-item {
+  position: relative;
   padding: 0.5rem;
   border-radius: 0.4rem;
   background: #a1e1c0; }
@@ -87,18 +88,34 @@ html {
 .task-item__form {
   display: block; }
 
-.task-item__description {
+.task-item__input-description {
+  display: block;
+  overflow: hidden;
   box-sizing: border-box;
   width: 100%;
   margin-bottom: 0.5rem;
-  color: #333;
+  padding: 0;
+  resize: none;
   border: 0;
-  border-bottom: 1px solid transparent;
+  outline: 0;
   background: none;
-  font-size: 1rem; }
-  .task-item__description:focus {
+  font-family: 'Roboto';
+  font-size: 16px; }
+  .task-item__input-description:focus {
     border-bottom: 1px solid #333;
     outline: none; }
+
+.task-item__ghost-input {
+  position: absolute;
+  top: 0;
+  right: 0.5rem;
+  left: 0.5rem;
+  display: block;
+  visibility: hidden;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: rgba(0, 0, 0, 0.1); }
 
 .task-item__controls {
   display: flex;
