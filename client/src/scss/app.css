@@ -81,15 +81,8 @@ html {
 
 .task-item {
   padding: 0.5rem;
-  border-radius: 0.4rem; }
-  .task-item--do-it {
-    background: #c1d996; }
-  .task-item--doing {
-    background: #abdc99; }
-  .task-item--ding-dong {
-    background: #9ddea4; }
-  .task-item--done {
-    background: #a1e1c0; }
+  border-radius: 0.4rem;
+  background: #a1e1c0; }
 
 .task-item__form {
   display: block; }
@@ -144,6 +137,26 @@ html {
   flex: 1;
   max-width: 320px;
   margin: 0.5rem; }
+
+.dashboard__column:nth-child(5n + 1)
+.task-item {
+  background: #d2c77f; }
+
+.dashboard__column:nth-child(5n + 2)
+.task-item {
+  background: #c5d482; }
+
+.dashboard__column:nth-child(5n + 3)
+.task-item {
+  background: #b0d685; }
+
+.dashboard__column:nth-child(5n + 4)
+.task-item {
+  background: #9ad888; }
+
+.dashboard__column:nth-child(5n + 5)
+.task-item {
+  background: #8bda91; }
 
 .dashboard__column-title {
   margin: 1rem 0;

@@ -1,15 +1,19 @@
 export default [
     {
-        id: 'do-it',
-        label: 'Do it'
+        id: 'inbox',
+        label: 'Inbox'
     },
     {
-        id: 'ding-dong',
-        label: 'Ding dong'
+        id: 'this-week',
+        label: 'This week'
     },
     {
-        id: 'doing',
-        label: 'Doing'
+        id: 'next-steps',
+        label: 'Next steps'
+    },
+    {
+        id: 'in-progress',
+        label: 'In progress'
     },
     {
         id: 'done',
