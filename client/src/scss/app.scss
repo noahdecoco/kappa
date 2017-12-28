@@ -1,10 +1,10 @@
-@import './globals/colours.scss';
-@import './globals/typography.scss';
-@import './globals/layout.scss';
+@import './globals/colours';
+@import './globals/typography';
+@import './globals/layout';
 
-@import './components/login-view.scss';
-@import './components/header.scss';
-@import './components/task-list.scss';
-@import './components/task-item.scss';
-@import './components/form-new-task.scss';
-@import './components/dashboard.scss';
+@import './components/login-view';
+@import './components/header';
+@import './components/task-list';
+@import './components/task-item';
+@import './components/form-new-task';
+@import './components/dashboard';
