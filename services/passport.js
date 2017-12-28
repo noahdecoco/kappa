@@ -28,6 +28,12 @@ passport.use(
             proxy: true
         },
         async (accesstoken, refreshToken, profile, done) => {
+            // Catch errors.
+            if (!profile)
+            {
+                done("Google didn't return a profile.");
+            }
+            // Handle valid cases.
             const existingUser = await getExistingUser({
                 googleId: profile.id
             });
@@ -51,7 +57,12 @@ passport.use(
             proxy: true
         },
         async (accesstoken, refreshToken, profile, done) => {
-            console.log('id', profile.id);
+            // Catch errors.
+            if (!profile)
+            {
+                done("Facebook didn't return a profile.");
+            }
+            // Handle valid cases.
             const existingUser = await getExistingUser({
                 facebookId: profile.id
             });
