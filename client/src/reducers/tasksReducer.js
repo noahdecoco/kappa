@@ -1,19 +1,19 @@
 import {
-    ADD_TODO,
-    DELETE_TODO,
-    UPDATE_TODO,
-    FETCH_TODOS
+    CREATE_TASK,
+    DELETE_TASK,
+    UPDATE_TASK,
+    FETCH_TASKS
 } from '../actions/types';
 
-const todosReducer = (state = [], actions) => {
+const tasksReducer = (state = [], actions) => {
     switch (actions.type) {
-        case ADD_TODO:
+        case CREATE_TASK:
             return [actions.payload, ...state];
-        case DELETE_TODO:
+        case DELETE_TASK:
             return state.filter(item => actions.payload._id !== item._id);
-        case FETCH_TODOS:
+        case FETCH_TASKS:
             return actions.payload || [];
-        case UPDATE_TODO:
+        case UPDATE_TASK:
             return state.map(item => {
                 if (actions.payload._id === item._id) {
                     return actions.payload;
@@ -26,4 +26,4 @@ const todosReducer = (state = [], actions) => {
     }
 };
 
-export default todosReducer;
+export default tasksReducer;

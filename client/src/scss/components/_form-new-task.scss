@@ -1,0 +1,28 @@
+.form-new-task {
+    display: flex;
+
+    font-size: 0;
+    line-height: 0;
+}
+
+.form-new-task__input-description {
+    box-sizing: border-box;
+    width: calc(100% - 22px);
+    height: 22px;
+    margin: 0;
+
+    border: 0;
+    padding-left: 0.5rem;
+    border-right: 1px solid $colour-dark-grey;
+    border-radius: 0.4rem 0 0 0.4rem;
+    outline: 0;
+}
+
+.form-new-task__button-submit {
+    width: 22px;
+    height: 22px;
+
+    border: 0;
+    border-radius: 0 0.4rem 0.4rem 0;
+    outline: 0;
+}

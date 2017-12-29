@@ -6,8 +6,8 @@ import * as actions from '../actions';
 
 import Login from './Login';
 import Header from './Header';
-import TodoForm from './todos/TodoForm';
-import TodoList from './todos/TodoList';
+
+import TasksDashboard from './tasks/TasksDashboard';
 
 class App extends Component {
     componentWillMount() {
@@ -24,11 +24,7 @@ class App extends Component {
         return (
             <div>
                 <Header />
-                <TodoForm />
-                <p>Incomplete tasks</p>
-                <TodoList showCompleted={false} />
-                <p>Complete tasks</p>
-                <TodoList showCompleted={true} />
+                <TasksDashboard />
             </div>
         );
     }

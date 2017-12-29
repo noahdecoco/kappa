@@ -1,0 +1,44 @@
+.login-view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.login-view__dialog {
+    text-align: center;
+}
+
+.login-view__logo {
+    color: $colour-white;
+
+    font-size: 3rem;
+}
+
+.login-view__button-google {
+    display: inline-block;
+
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+
+    text-decoration: none;
+
+    color: $colour-dark-grey;
+    border-radius: 0.5rem;
+    background: $colour-green;
+}
+
+.login-view__button-facebook {
+    display: inline-block;
+
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+
+    text-decoration: none;
+
+    color: $colour-dark-grey;
+    border-radius: 0.5rem;
+    background: $colour-blue;
+}

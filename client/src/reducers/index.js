@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 
 import authReducer from './authReducer';
-import todosReducer from './todosReducer';
+import tasksReducer from './tasksReducer';
 import { reducer as formReducer } from 'redux-form';
 
 const combinedReducers = combineReducers({
     auth: authReducer,
-    todos: todosReducer,
+    tasks: tasksReducer,
     form: formReducer
 });
 

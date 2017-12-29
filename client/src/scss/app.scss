@@ -1,1 +1,10 @@
+@import './globals/colours';
+@import './globals/typography';
+@import './globals/layout';
 
+@import './components/login-view';
+@import './components/header';
+@import './components/task-list';
+@import './components/task-item';
+@import './components/form-new-task';
+@import './components/dashboard';
