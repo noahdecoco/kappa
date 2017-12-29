@@ -1,0 +1,27 @@
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+
+    height: calc(100vh - 50px);
+    padding: 0.5rem;
+}
+
+.dashboard__column {
+    flex: 1;
+
+    max-width: 320px;
+    margin: 0.5rem;
+}
+
+@for $i from 1 through length($colours-theme) {
+    .dashboard__column:nth-child(#{length($colours-theme)}n + #{$i})
+        .task-item {
+        background: nth($colours-theme, $i);
+    }
+}
+
+.dashboard__column-title {
+    margin: 1rem 0;
+
+    color: $colour-white;
+}

@@ -6,10 +6,14 @@ class Landing extends Component {
         if (!this.props.auth) return;
 
         return (
-            <div>
-                <p>Logged in as: {this.props.auth.displayName}</p>
-                <a href="/api/logout">Logout</a>
-            </div>
+            <header className="header">
+                <p className="header__welcome">
+                    Hello, {this.props.auth.displayName}
+                </p>
+                <a className="header__button-logout" href="/api/logout">
+                    &lt;
+                </a>
+            </header>
         );
     }
 

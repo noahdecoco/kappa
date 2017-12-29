@@ -23,11 +23,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require('./models/User');
-require('./models/Todo');
+require('./models/Task');
 
 require('./services/passport');
 require('./routes/auth-routes')(app);
-require('./routes/todos-routes')(app);
+require('./routes/tasks-routes')(app);
 
 app.get('/', (req, res) => {
     res.send('logged in');

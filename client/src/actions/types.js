@@ -1,6 +1,5 @@
 export const FETCH_USER = 'FETCH_USER';
-export const FETCH_TODOS = 'FETCH_TODOS';
-export const ADD_TODO = 'ADD_TODO';
-export const DELETE_TODO = 'DELETE_TODO';
-export const UPDATE_TODO = 'UPDATE_TODO';
-
+export const FETCH_TASKS = 'FETCH_TASKS';
+export const CREATE_TASK = 'CREATE_TASK';
+export const DELETE_TASK = 'DELETE_TASK';
+export const UPDATE_TASK = 'UPDATE_TASK';

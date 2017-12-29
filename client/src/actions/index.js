@@ -1,26 +1,34 @@
 import axios from 'axios';
 
+import {
+    FETCH_USER,
+    CREATE_TASK,
+    DELETE_TASK,
+    UPDATE_TASK,
+    FETCH_TASKS
+} from './types';
+
 export const fetchUser = () => async dispatch => {
     const res = await axios.get('/api/current-user');
-    dispatch({ type: 'FETCH_USER', payload: res.data });
+    dispatch({ type: FETCH_USER, payload: res.data });
 };
 
-export const submitTodo = values => async dispatch => {
-    const res = await axios.post('/api/todos', values);
-    dispatch({ type: 'ADD_TODO', payload: res.data });
+export const createTask = values => async dispatch => {
+    const res = await axios.post('/api/tasks', values);
+    dispatch({ type: CREATE_TASK, payload: res.data });
 };
 
-export const fetchTodos = () => async dispatch => {
-    const res = await axios.get('/api/todos');
-    dispatch({ type: 'FETCH_TODOS', payload: res.data });
+export const fetchTasks = () => async dispatch => {
+    const res = await axios.get('/api/tasks');
+    dispatch({ type: FETCH_TASKS, payload: res.data });
 };
 
-export const updateTodo = (id, values) => async dispatch => {
-    const res = await axios.patch(`/api/todos/${id}`, values);
-    dispatch({ type: 'UPDATE_TODO', payload: res.data });
+export const updateTask = (id, values) => async dispatch => {
+    const res = await axios.patch(`/api/tasks/${id}`, values);
+    dispatch({ type: UPDATE_TASK, payload: res.data });
 };
 
-export const deleteTodo = id => async dispatch => {
-    const res = await axios.delete(`/api/todos/${id}`);
-    dispatch({ type: 'DELETE_TODO', payload: res.data });
+export const deleteTask = id => async dispatch => {
+    const res = await axios.delete(`/api/tasks/${id}`);
+    dispatch({ type: DELETE_TASK, payload: res.data });
 };
